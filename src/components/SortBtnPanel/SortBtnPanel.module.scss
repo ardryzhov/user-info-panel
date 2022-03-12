@@ -1,0 +1,18 @@
+.sort__btn_wrap {
+	width: 20%;
+	background-color: #BDBDBD;
+
+	.sort__btn_content {
+		margin: 35px 20px;
+
+		.sort__btn_title h2 {
+			text-align: center;
+		}
+
+		.sort__btns {
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+		}
+	}
+}

@@ -1,0 +1,24 @@
+.sort__btn_wrap {
+	display: flex;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+	margin: 5px 0px;
+	
+	button {
+		font-size: 18px;
+		width: 70%;
+		height: 40px;
+		color: #fff;
+		background-color: #4B51EF;
+		border: none;
+		outline: none;
+		border-radius: 5px;
+		cursor: pointer;
+		transition: .2s background-color;
+
+		&:hover {
+			background-color: #4348d6;
+		}
+	}
+}

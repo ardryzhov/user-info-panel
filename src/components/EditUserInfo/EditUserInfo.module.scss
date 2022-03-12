@@ -1,0 +1,29 @@
+.edit__user_info {
+	width: 80%;
+	margin: 35px 45px;
+
+	.edit__user_header {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 20px;
+
+		.edit__user_title {
+			font-size: 24px;
+		}
+
+		.edit__user_btn button {
+			font-size: 24px;
+			border: none;
+			background-color: #4B51EF;
+			color: #fff;
+			padding: 10px;
+			border-radius: 5px;
+			cursor: pointer;
+			transition: .2s background-color;
+
+			&:hover {
+				background-color: #4348d6;
+			}
+		}
+	}
+}
