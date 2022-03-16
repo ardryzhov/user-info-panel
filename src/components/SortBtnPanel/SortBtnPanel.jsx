@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import style from './SortBtnPanel.module.scss';
-import { useSelector } from 'react-redux';
 
 import SortBtn from '../SortBtn/';
 
@@ -8,15 +7,10 @@ import { v4 as uuidv4 } from 'uuid';
 
 const SortBtnPanel = () => {
 
-	const store = useSelector(state => state.users);
-	const [sortParams, setSortParams] = useState([
-		{id: uuidv4(), title: 'по городу', select: false},
-		{id: uuidv4(), title: 'по компании', select: false},
+	const [sortParams] = useState([
+		{id: uuidv4(), title: 'по имени', ticket: 'name'},
+		{id: uuidv4(), title: 'по городу', ticket: 'city'},
 	])
-
-	// useEffect(() => {
-	// 	console.log('after fetch: ', store)
-	// }, [sortParams])
 
 	return (
 		<div className={style['sort__btn_wrap']}>
@@ -28,7 +22,7 @@ const SortBtnPanel = () => {
 				<div className={style['sort__btns']}>
 					{sortParams.map(param => {
 						return (
-							<SortBtn key={param.id} id={param.id} title={param.title} sortParams={sortParams} setSortParams={setSortParams} />
+							<SortBtn key={param.id} title={param.title} ticket={param.ticket} />
 						)
 					})}	
 				</div>

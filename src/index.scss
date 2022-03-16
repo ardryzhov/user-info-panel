@@ -9,5 +9,13 @@ html, body, #root {
 	min-height: 100%;
 	width: 100%;
 	font-family: 'Poppins', sans-serif;
-	//font-weight: 400-500-600 / regular-medium-semi-bold;
+}
+
+html, body {
+	min-height: 100vh;
+	overflow-y: visible;
+}
+
+#root {
+	min-height: 100vh;
 }

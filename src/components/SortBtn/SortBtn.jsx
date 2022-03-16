@@ -1,20 +1,20 @@
 import React from 'react'
+import { useDispatch } from 'react-redux';
 import style from './SortBtn.module.scss';
 
-const SortBtn = ({id, title, sortParams,  setSortParams}) => {
+import { sortByAction } from '../../redux/actions'
 
-	const changeParams = (id) => {
-		const filtred = sortParams.filter(param => {
-			param.select = false;
-			if (param.id === id) param.select = true;
-			return param;
-		})
-		setSortParams([...filtred])
+const SortBtn = ({title, ticket}) => {
+
+	const dispatch = useDispatch();
+
+	const sortUsers = () => {
+		dispatch(sortByAction(ticket))
 	}
 
 	return (
 		<div className={style['sort__btn_wrap']}>
-			<button className={style['sort__btn']} onClick={(e) => changeParams(id)}>{title}</button>
+			<button className={style['sort__btn']} onClick={sortUsers}>{title}</button>
 		</div>
 	)
 };

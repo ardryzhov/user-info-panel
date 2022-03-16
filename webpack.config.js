@@ -1,14 +1,14 @@
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
 	mode: 'development',
-	entry: ["@babel/polyfill", './src/index.jsx'],
+	entry: ["@babel/polyfill", path.resolve(__dirname, 'src', 'index.jsx')],
 	output: {
 		path: path.resolve(__dirname, 'dist'),
 		filename: '[name].[contenthash].js',
-		publicPath: '/'
 	},
 	devServer: {
 		static: {
@@ -26,6 +26,11 @@ module.exports = {
 			template: path.resolve(__dirname, './src/index.html'),
 			filename: 'index.html'
 		}),
+		new CopyWebpackPlugin({
+			patterns: [
+				{from: path.resolve(__dirname, 'src/favicon.ico'), to: path.resolve(__dirname, 'dist')}
+			]
+		})
 	],
 	module: {
 		rules: [

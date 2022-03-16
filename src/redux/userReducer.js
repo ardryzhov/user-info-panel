@@ -1,4 +1,4 @@
-import { FETCH_USERS, SELECT_USER } from './actions';
+import { FETCH_USERS, SELECT_USER, CHANGE_INPUT, SAVE_CHANGE, SORT_NAME, SORT_COMPANY, SORT_BY } from './actions';
 
 const initialState = [];
 
@@ -30,13 +30,32 @@ export const userReducer = (state = initialState, action) => {
 			})
 			return [...selectedUser]
 
+		case CHANGE_INPUT:
+			const nwState = state.map(item => {
+				if (item.id === action.payload.id) {
+					return action.payload
+				} 
+				return item
+			})
+			return [...nwState]
+		
+		case SAVE_CHANGE: 
+			const savedChangeState = state.filter(item => {
+				item.isSelected = false
+				return item
+			});
+			return [...savedChangeState]
+
+		case SORT_BY:
+			function sortByTicket(ticket) {
+				return (a, b) => a[ticket] > b[ticket] ? 1 : -1
+			}
+			const sortState = state.sort(sortByTicket(action.payload))
+
+			return [...sortState]
+
 		default:
 			return state;
 	}
 };
-
-const state = [
-	{id: 1, name: "Clementina DuBuque", username: "Moriah.Stanton", email: "Rey.Padberg@karina.biz", city: "Lebsackbury", street: "Kattie Turnpike", companyName: "Hoeger LLC", zipcode: "31428-2261", phone: "024-648-3804", website: "ambrose.net", isSelected: false},
-	{id: 2, name: "Clementina2 DuBuque2", username: "Moriah.Stanton2", email: "Rey.Padberg@karina.biz2", city: "Lebsackbury2", street: "Kattie Turnpike2", companyName: "Hoeger LLC2", zipcode: "22222-2222", phone: "222-222-2222", website: "ambrose.net2", isSelected: false},
-]
 

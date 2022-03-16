@@ -1,7 +1,8 @@
 .user__input {
-	margin: 20px 0px;
+	margin: 20px 15px;
 	display: flex;
 	flex-direction: column;
+
 
 	label {
 		font-size: 18px;
@@ -15,5 +16,29 @@
 		border: 1px solid #ccc;
 		border-radius: 10px;
 		font-weight: 600;
+		&.invalid-input {
+			border-bottom: 2px solid red;
+			box-shadow: 3px 3px 5px red;
+		}
 	}
+
+
+	input.inactive__input {
+		cursor: not-allowed;
+	}
+
+	textarea {
+		font-weight: 600;
+		padding: 5px;
+		border: 1px solid #ccc;
+		border-radius: 10px;
+		font-size: 16px;
+		width: 95%;
+		resize: none;
+
+		&:disabled {
+			cursor: not-allowed;
+		}
+	}
+
 }

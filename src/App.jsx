@@ -1,6 +1,7 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import './App.scss';
+
 
 import { fetchUsers } from './redux/fetchUsers'
 
@@ -13,6 +14,7 @@ const App = () => {
 	const store = useSelector(state => state.users);
 
 	const selectedItem = store.filter(value => value.isSelected);
+
 
 	useEffect(() => {
 		// if (store.length === 0) {

@@ -2,6 +2,7 @@
 	width: 80%;
 	margin: 35px 45px;
 
+
 	.edit__user_header {
 		display: flex;
 		justify-content: space-between;
@@ -25,5 +26,30 @@
 				background-color: #4348d6;
 			}
 		}
+	}
+
+	.edit__user_inputs {
+		border: 1px solid #ccc;
+		border-radius: 15px;
+	}
+
+	.edit__user_btn-update {
+		margin: 10px 0px;
+		display: flex;
+		justify-content: end;
+	}
+
+	.edit__user_btn-update button {
+		font-size: 24px;
+		border: none;
+		background-color: #52CF4F;
+		color: #fff;
+		padding: 10px;
+		border-radius: 5px;
+		cursor: pointer;
+	}
+	.edit__user_btn-update button:disabled {
+		background-color: #AFAFAF;
+		cursor: not-allowed;
 	}
 }
