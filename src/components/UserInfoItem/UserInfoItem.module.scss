@@ -47,3 +47,25 @@
 		}
 	}
 }
+
+@media (max-width: 670px) {
+	.user__info_item {
+		.user__info_btn {
+			button {
+				padding: 10px 5px;
+				font-size: 1rem;
+			}
+		}
+	}
+}
+
+@media (max-width: 330px) {
+	.user__info_item {
+		.user__info_btn {
+			button {
+				padding: 10px;
+				font-size: .5rem;
+			}
+		}
+	}
+}

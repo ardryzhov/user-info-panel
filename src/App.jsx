@@ -17,9 +17,6 @@ const App = () => {
 
 
 	useEffect(() => {
-		// if (store.length === 0) {
-		// 	dispatch(fetchUsers())
-		// }
 		dispatch(fetchUsers())
 	}, [])
 

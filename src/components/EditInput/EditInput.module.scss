@@ -42,3 +42,11 @@
 	}
 
 }
+
+@media (max-width: 450px) {
+	.user__input {
+		input {
+			width: 90%;
+		}
+	}
+}

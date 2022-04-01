@@ -53,3 +53,26 @@
 		cursor: not-allowed;
 	}
 }
+
+@media (max-width: 525px) {
+	.edit__user_info {
+		.edit__user_header {
+			.edit__user_btn button {
+				font-size: 1rem;
+				padding: 10px 5px;
+			}
+		}
+	}
+}
+
+@media (max-width: 450px) {
+	.edit__user_info {
+		margin: 35px 10px;
+		.edit__user_header {
+			flex-direction: column;
+			.edit__user_title {
+				font-size: 18px;
+			}
+		}
+	}
+}
